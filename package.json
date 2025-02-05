@@ -1,0 +1,20 @@
+{
+  "name": "revision-nodejs",
+  "version": "1.0.0",
+  "description": "tinder for dev",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon src/app.js",
+    "dev":"nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nodejs,javascript"
+  },
+  "author": "\"Siddhant\"",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
