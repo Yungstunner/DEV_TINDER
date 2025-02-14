@@ -24,8 +24,42 @@ app.post("/signup",async(req ,res)=>{
     // const user= new User(userObj);
     // await user.save();
     // res.send("User added successfully"); 
+}); 
+  
+// Get user by email
+app.get("/user",async(req,res)=>{
+  const useremail=req.body.emailId;
+  try{
+   const user= await User.find({emailId:useremail});
+    res.send(user);
+  }catch(err){
+    res.status(404).send("Something went wrong")
+  }
 });
 
+//feed api- get/feed-get all users from database
+
+app.get("/feed",async(req,res)=>{
+  try{
+    const users=await User.find({});
+    res.send(users);
+  }catch(err){
+    res.status(404).send("Something went wrong")
+  }
+
+})
+
+app.delete("/user",async(req,res)=>{
+  const userId=req.body.userId;
+  try{
+    const user=await User.findByIdAndDelete(userId);
+
+    res.send("User deleted successfully");
+
+  }catch(err){
+    res.status(404).send("Something went wrong")
+  }
+})
 connectDB()
 .then(()=>{
   console.log("Databse connected successfully")
