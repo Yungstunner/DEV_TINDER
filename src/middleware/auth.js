@@ -8,6 +8,4 @@ const adminAuth=(req,res,next)=>{
     next();
   }
 };
-module.exports={
-  adminAuth,
-}
+module.exports= adminAuth;
