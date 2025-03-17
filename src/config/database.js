@@ -5,4 +5,4 @@ const connectDB=async()=>{
     "mongodb+srv://siddhantdwivedi727:SyffQ8854W4xnYSi@namastenode.4utnb.mongodb.net/reviseNode"
   );
 }
-module.exports= connectDB
+module.exports= connectDB;
